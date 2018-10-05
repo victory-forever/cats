@@ -1,0 +1,274 @@
+/*Шрифты */
+
+@font-face {
+    font-family: 'Exo 2.0';
+    src: url('../fonts/Exo20-Thin.eot');
+    src: url('../fonts/Exo20-Thin.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Exo20-Thin.woff2') format('woff2'),
+        url('../fonts/Exo20-Thin.woff') format('woff'),
+        url('../fonts/Exo20-Thin.ttf') format('truetype'),
+        url('../fonts/Exo20-Thin.svg#Exo2.0-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+/* Спецификация */
+
+div, p, input, button, form, ul, li {
+	box-sizing: border-box;
+}
+
+p, button, h1, h2, ul, li {
+	padding: 0px;
+	margin: 0px;
+}
+
+ul, li {
+	display: block;
+}
+
+a, a:hover, a:active, a:focus, button, input, button:hover, button:active, button:focus,
+input:focus, input:active {
+	text-decoration: none;
+	outline: none;
+}
+
+body {
+	font-family: "Trebuchet MS", sans-serif;	
+	color: #fff;
+	min-height: 100vh;
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), color-stop(transparent), to(rgba(0, 0, 0, 0.5))),
+				url(../img/bg.png) repeat;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, transparent, rgba(0, 0, 0, 0.5) 100%),
+    			url(../img/bg.png) repeat;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, transparent, rgba(0, 0, 0, 0.5) 100%),
+    			url(../img/bg.png) repeat;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, transparent, rgba(0, 0, 0, 0.5) 100%),
+    			url(../img/bg.png) repeat;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, transparent, rgba(0, 0, 0, 0.5) 100%),
+    			url(../img/bg.png) repeat;	
+}
+
+.clearfix:after {
+	content:'';
+	display: table;
+	width: 100%;
+	clear: both;
+}
+
+$blue: #1698d9;
+$pink: #d91667;
+$grey: #b3b3b3;
+
+/*ПЕРВЫЙ ЭКРАН*/
+
+main, .products-container {
+	min-height: 100vh;
+}
+
+.products-container {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+	font-family: "Exo 2.0", sans-serif;
+	font-size: 36px;
+	margin: 23px 0;
+	text-align: center; 
+}
+
+.products {
+	display: flex;
+}
+
+.product {
+	padding: 0 40px 40px 40px;
+}
+
+.product__card, .product__message {
+	width: 320px;
+}
+
+.product__card {
+	display: block;	
+	color: #666;
+	height: 480px;
+	cursor: pointer;
+}
+
+.cardcontent {
+	position: relative;		
+    	
+}
+
+.cardbg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url(../img/cat.png) no-repeat -27px 207px;
+	border-radius: 8px;
+}
+
+.product__text {	
+	position: relative;
+	padding: 20px 0 0 44px;
+}
+
+.product__description-container {
+	font-size: 16px;	
+}
+
+.product__description_selected-hover {
+	display: none;
+	color: #e62e7a;
+}
+
+h1, h2 {
+	color: #000;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 48px;	
+	margin: 7px 0 0 -2px;
+}
+
+h2 {
+	font-size: 24px;	
+}
+
+.product__offer {
+	font-size: 14px;
+	line-height: 16px;
+	margin: 14px 0 0 0;
+}
+
+.product__offer-item span {
+	font-weight: bold;
+}
+
+.product__weight {	
+	display: flex;
+    flex-direction: column;    
+    align-items: center;
+    width: 81px;
+    height: 81px;
+    border-radius: 50%;
+    background: $blue;
+    color: #fff;
+	line-height: 22px;
+	padding: 20px 0;
+	position: absolute;
+    bottom: 11px;
+    right: 11px;
+}
+
+.product__weight-figure {
+	font-size: 42px;
+	margin: 0 0 7px 0;
+}
+
+.product__weight-unit {
+	font-size: 21px;
+}
+
+.product__message-container {
+	font-size: 13px;
+	line-height: 16px;	
+	margin: 14px 0 0 0;
+	text-align: center;
+}
+
+.product__message_default label {
+	color: $blue;
+	font-weight: bold;	
+    cursor: pointer;   
+    border-bottom: 1px dashed; 
+}
+
+.product__message_default span{
+	color: $blue;
+}
+
+.product__message_selected, .product__message_disabled {
+	display: none;
+}
+
+.product__message_disabled {
+	color: #ffff66;
+}
+
+.product__checkbox {
+	display: none;
+}
+
+.product__checkbox:checked + .cardsvg .cardrect, .product__checkbox:checked + .cardsvg .cardline {	
+	stroke: $pink;
+}
+
+.product__checkbox:checked + .cardsvg .product__weight {
+	background: $pink;
+}
+
+.product__checkbox:disabled + .cardsvg {	
+	cursor: not-allowed;
+}
+
+.product__checkbox:disabled + .cardsvg .cardline, .product__checkbox:disabled + .cardsvg .cardrect {	
+	stroke: $grey;
+}
+
+.product__checkbox:disabled + .cardsvg .cardcontent, .product__checkbox:disabled + .cardsvg h1, .product__checkbox:disabled + .cardsvg h2 {
+	color: $grey;
+}
+
+.product__checkbox:disabled + .cardsvg .cardcontent {
+	opacity: 0.5;
+}
+
+.product__checkbox:disabled + .cardsvg .product__weight {
+	background: $grey;
+}
+
+.product__card:hover .product__checkbox:not(:checked):not(:disabled) + .cardsvg .cardrect, .product__card:hover .product__checkbox:checked + .cardsvg .cardline {
+	stroke: #2ea8e6;
+}
+
+.product__card:hover .product__checkbox:not(:checked):not(:disabled) + .cardsvg .product__weight {
+	background: #2ea8e6;
+}
+
+.product__card:hover ~ .product__message-container .product__message_default label,
+.product__card:hover ~ .product__message-container .product__message_default span,
+.product__message_default label:hover, .product__message_default span:hover {
+	color: #2ea8e6;
+}
+
+.product__card:hover .product__checkbox:checked + .cardsvg .cardrect, .product__card:hover .product__checkbox:checked + .cardsvg .cardline {
+	stroke: #e62e7a;
+}
+
+.product__card:hover .product__checkbox:checked + .cardsvg .product__weight {
+	background: #e62e7a;
+}
+
+
+
+/*\\\\\\\\\\\\\\\\\\\Адаптация\\\\\\\\\\\\\\\\\\\\\\\*/
+
+@media screen and (max-width: 1199px) { 
+	.products {
+		flex-wrap: wrap;
+		justify-content: center;
+	}	
+}
+
+@media screen and (max-width: 520px) { 
+	.product {
+		padding: 0 0 40px 0;
+	}	
+}
+
