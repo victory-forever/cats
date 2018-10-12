@@ -85,36 +85,29 @@ main, .products-container {
 }
 
 .product {
-	padding: 0 40px 40px 40px;
-}
-
-.product__card, .product__message {
-	width: 320px;
+	padding: 0 40px 40px 40px;        
 }
 
 .product__card {
-	display: block;	
-	color: #666;
-	height: 480px;
 	cursor: pointer;
 }
 
-.cardcontent {
-	position: relative;		
-    	
+.cardsvg {
+	position: absolute;
 }
 
-.cardbg {
-	position: absolute;
+.cardcontent {
+	position: relative;		 
 	width: 100%;
-	height: 100%;
-	background: url(../img/cat.png) no-repeat -27px 207px;
-	border-radius: 8px;
+	height: 480px;  
+	background: url(../img/cat-cropt.png) no-repeat 4px 207px;
+	border-radius: 22px; 
+	color: #666;	
 }
 
 .product__text {	
 	position: relative;
-	padding: 20px 0 0 44px;
+	padding: 22px 0 0 49px;
 }
 
 .product__description-container {
@@ -150,10 +143,7 @@ h2 {
 	font-weight: bold;
 }
 
-.product__weight {	
-	display: flex;
-    flex-direction: column;    
-    align-items: center;
+.product__weight {		
     width: 81px;
     height: 81px;
     border-radius: 50%;
@@ -162,8 +152,12 @@ h2 {
 	line-height: 22px;
 	padding: 20px 0;
 	position: absolute;
-    bottom: 11px;
-    right: 11px;
+    bottom: 15px;
+    right: 15px;
+    text-align: center;
+    span {
+    	display: block;
+    }
 }
 
 .product__weight-figure {
@@ -180,9 +174,10 @@ h2 {
 	line-height: 16px;	
 	margin: 14px 0 0 0;
 	text-align: center;
+	width: 320px;
 }
 
-.product__message_default label {
+.buyfuagra, .buyfish, .buychicken {
 	color: $blue;
 	font-weight: bold;	
     cursor: pointer;   
@@ -209,11 +204,11 @@ h2 {
 	stroke: $pink;
 }
 
-.product__checkbox:checked + .cardsvg .product__weight {
+.product__checkbox:checked ~ .cardcontent .product__weight {
 	background: $pink;
 }
 
-.product__checkbox:disabled + .cardsvg {	
+.product__checkbox:disabled ~ .cardcontent {	
 	cursor: not-allowed;
 }
 
@@ -221,29 +216,28 @@ h2 {
 	stroke: $grey;
 }
 
-.product__checkbox:disabled + .cardsvg .cardcontent, .product__checkbox:disabled + .cardsvg h1, .product__checkbox:disabled + .cardsvg h2 {
+.product__checkbox:disabled ~ .cardcontent, .product__checkbox:disabled ~ .cardcontent h1, .product__checkbox:disabled ~ .cardcontent h2 {
 	color: $grey;
 }
 
-.product__checkbox:disabled + .cardsvg .cardcontent {
+.product__checkbox:disabled ~ .cardcontent {
 	opacity: 0.5;
 }
 
-.product__checkbox:disabled + .cardsvg .product__weight {
+.product__checkbox:disabled ~ .cardcontent .product__weight {
 	background: $grey;
 }
 
-.product__card:hover .product__checkbox:not(:checked):not(:disabled) + .cardsvg .cardrect, .product__card:hover .product__checkbox:checked + .cardsvg .cardline {
+.product__card:hover .product__checkbox:not(:checked):not(:disabled) + .cardsvg .cardrect, .product__card:hover .product__checkbox:not(:checked):not(:disabled) + .cardsvg .cardline {
 	stroke: #2ea8e6;
 }
 
-.product__card:hover .product__checkbox:not(:checked):not(:disabled) + .cardsvg .product__weight {
+.product__card:hover .product__checkbox:not(:checked):not(:disabled) ~ .cardcontent .product__weight {
 	background: #2ea8e6;
 }
 
-.product__card:hover ~ .product__message-container .product__message_default label,
 .product__card:hover ~ .product__message-container .product__message_default span,
-.product__message_default label:hover, .product__message_default span:hover {
+.product__message_default span:hover {
 	color: #2ea8e6;
 }
 
@@ -251,7 +245,7 @@ h2 {
 	stroke: #e62e7a;
 }
 
-.product__card:hover .product__checkbox:checked + .cardsvg .product__weight {
+.product__card:hover .product__checkbox:checked ~ .cardcontent .product__weight {
 	background: #e62e7a;
 }
 

@@ -2,6 +2,20 @@
 $(document).ready(function(){
 
 
+// Переключение карточек
+
+	$(".product__card_fuagra, .buyfuagra").click(function() {
+	    $("#fuagra").trigger('click');
+	}); 	 
+
+	$(".product__card_fish, .buyfish").click(function() {
+	    $("#fish").trigger('click');
+	}); 
+
+	$(".product__card_chicken, .buychicken").click(function() {
+	    $("#chicken").trigger('click');
+	}); 
+
 
 // Текст под карточкой с фуа-гра
 
@@ -19,12 +33,12 @@ $(document).ready(function(){
 		$('.product__message-container_fuagra .product__message_disabled').hide();
     }
 
-	$('#fuagra').click(function(){
-	    if ($(this).is(':checked')){
+	$('#fuagra, .buyfuagra').click(function(){
+	    if ($('#fuagra').is(':checked')){
 	        $('.product__message-container_fuagra .product__message_selected').show();
 	        $('.product__message-container_fuagra .product__message_default').hide();
 			$('.product__message-container_fuagra .product__message_disabled').hide();
-	    } else if ($(this).is(':disabled')) {
+	    } else if ($('#fuagra').is(':disabled')) {
 		    $('.product__message-container_fuagra .product__message_disabled').show();
 	        $('.product__message-container_fuagra .product__message_default').hide();
 			$('.product__message-container_fuagra .product__message_selected').hide();
@@ -54,12 +68,12 @@ $(document).ready(function(){
 		$('.product__message-container_fish .product__message_disabled').hide();
     }
 
-	$('#fish').click(function(){
-	    if ($(this).is(':checked')){
+	$('#fish, .buyfish').click(function(){
+	    if ($('#fish').is(':checked')){
 	        $('.product__message-container_fish .product__message_selected').show();
 	        $('.product__message-container_fish .product__message_default').hide();
 			$('.product__message-container_fish .product__message_disabled').hide();
-	    } else if ($(this).is(':disabled')) {
+	    } else if ($('#fish').is(':disabled')) {
 	        $('.product__message-container_fish .product__message_disabled').show();
 	        $('.product__message-container_fish .product__message_default').hide();
 			$('.product__message-container_fish .product__message_selected').hide();
@@ -88,12 +102,12 @@ $(document).ready(function(){
 		$('.product__message-container_chicken .product__message_disabled').hide();
     }
 
-	$('#chicken').click(function(){
-	    if ($(this).is(':checked')){
+	$('#chicken, .buychicken').click(function(){
+	    if ($('#chicken').is(':checked')){
 	        $('.product__message-container_chicken .product__message_selected').show();
 	        $('.product__message-container_chicken .product__message_default').hide();		
 			$('.product__message-container_chicken .product__message_disabled').hide();
-	    } else if ($(this).is(':disabled')) {
+	    } else if ($('#chicken').is(':disabled')) {
 	        $('.product__message-container_chicken .product__message_disabled').show();
 	        $('.product__message-container_chicken .product__message_default').hide();
 			$('.product__message-container_chicken .product__message_selected').hide();
@@ -109,8 +123,8 @@ $(document).ready(function(){
 
 
 	$( ".product__checkbox" ).change(function() {
-		$('.cardsvg:hover .product__description_default').show();
-		$('.cardsvg:hover .product__description_selected-hover').hide();
+		$('.product__card:hover .product__description_default').show();
+		$('.product__card:hover .product__description_selected-hover').hide();
 	});
 
 	$( ".product__card_fuagra" ).hover(
@@ -161,5 +175,10 @@ $(document).ready(function(){
 
 });
 
+
+    
+    
+   
+   
 
 
